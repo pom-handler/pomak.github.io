@@ -1,0 +1,133 @@
+/* Design tokens */
+:root {
+  --bg: #0b0c10;
+  --card: #111217;
+  --text: #e6e6e6;
+  --muted: #a0a0a0;
+  --primary: #7c5cff;
+  --primary-600: #6a48ff;
+  --border: #1f2230;
+  color-scheme: dark;
+}
+
+/* Light theme */
+.theme-light {
+  --bg: #f7f7fb;
+  --card: #ffffff;
+  --text: #141414;
+  --muted: #5a5a6a;
+  --primary: #5b5bd6;
+  --primary-600: #4a4ac0;
+  --border: #e6e6f0;
+  color-scheme: light;
+}
+
+html { scroll-behavior: smooth; }
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+  background: var(--primary);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(120%) blur(6px);
+  background: color-mix(in srgb, var(--bg), transparent 25%);
+  border-bottom: 1px solid var(--border);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+}
+
+.branding { display: flex; align-items: center; gap: 12px; }
+.avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--primary), var(--primary-600));
+  color: white; font-weight: 700;
+}
+.name { margin: 0; font-size: 1.25rem; }
+.title { margin: 2px 0 0; color: var(--muted); font-size: 0.95rem; }
+
+.site-nav ul { display: flex; gap: 14px; list-style: none; margin: 0; padding: 0; }
+.site-nav a { color: var(--text); text-decoration: none; opacity: 0.9; }
+.site-nav a:hover { color: var(--primary); }
+.theme-toggle {
+  margin-right: 10px;
+  background: none; border: 1px solid var(--border); color: var(--text);
+  padding: 6px 10px; border-radius: 8px; cursor: pointer;
+}
+
+main { display: grid; gap: 18px; padding: 22px 0 40px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+}
+.card > h2 { margin-top: 0; }
+
+.contact-list { display: flex; gap: 14px; flex-wrap: wrap; padding-left: 0; list-style: none; }
+.contact-list a { color: var(--primary); text-decoration: none; }
+.contact-list a:hover { text-decoration: underline; }
+
+.item { display: grid; gap: 8px; }
+.item-header { display: flex; flex-direction: column; gap: 6px; }
+.item-header h3 { margin: 0; }
+.meta { color: var(--muted); font-size: 0.95rem; }
+.item-points { margin: 0; padding-left: 18px; }
+.item-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.item-tags span {
+  border: 1px solid var(--border);
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  background: color-mix(in srgb, var(--primary), transparent 85%);
+}
+
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.project { display: grid; gap: 8px; }
+.project-links { display: flex; gap: 10px; }
+.project-links a { color: var(--primary); text-decoration: none; }
+
+.skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.pill-list { list-style: none; padding-left: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.pill-list li { background: color-mix(in srgb, var(--text), transparent 90%); color: var(--text); border: 1px solid var(--border); padding: 4px 10px; border-radius: 999px; font-size: 0.9rem; }
+
+.button { display: inline-block; background: var(--primary); color: #fff; text-decoration: none; padding: 10px 14px; border-radius: 10px; }
+.button:hover { background: var(--primary-600); }
+
+.site-footer { border-top: 1px solid var(--border); padding: 18px 0; color: var(--muted); }
+
+@media (min-width: 720px) {
+  .item-header { flex-direction: row; align-items: baseline; justify-content: space-between; }
+}
+
+
